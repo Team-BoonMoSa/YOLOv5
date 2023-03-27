@@ -61,7 +61,7 @@ Parent/YOLOv5$ python segment/predict.py --weights runs/train-seg/${훈련된 �
 Parent/YOLOv5$ python segment/predict.py --weights runs/train-seg/${훈련된 가중치}/weights/best.pt --source ../datasets/LogoRec/images/test --conf-thres ${threshold} --bms 1
 ```
 
-> :tada: Demo! :tada:
+> :tada: [Demo!](https://github.com/Team-BoonMoSa/YOLOv5/pull/5) :tada:
 
 ```shell
 Parent/YOLOv5$ python segment/predict.py --weights runs/train-seg/${훈련된 가중치}/weights/best.pt --source 0 --conf-thres ${threshold} --bms 2
