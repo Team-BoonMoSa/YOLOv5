@@ -15,7 +15,7 @@ def makeResults(res, idx='val/box_loss', figname='', fontsize=20, fontfamily='Ti
     plt.legend()
     if figname != '':
         print("Saving...")
-        plt.savefig(figname.replace('/', '-') + '.png', dpi=300, bbox_inches='tight', pad_inches=0.3, transparent=False)
+        plt.savefig('./Results/' + figname.replace('/', '-') + '.png', dpi=300, bbox_inches='tight', pad_inches=0.3, transparent=False)
 
 if __name__ == "__main__":
     model = 'YOLOv5'
