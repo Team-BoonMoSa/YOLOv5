@@ -23,12 +23,36 @@ No. Total GT Data:  2235
 ==============================
 ```
 
+```shell
+Parent/datasets/MakeData$ python labelme2YOLOv5.py
+100%|█████████████████████████████████████████████| 5/5 [00:00<00:00,  9.03it/s]
+==============================
+No. Total Data:  5
+==============================
+Training Data: No. Images 3
+Training Data: No. GT 3
+Validation Data: No. Images 2
+Validation Data: No. GT 2
+==============================
+No. Total Image Data:  5
+No. Total GT Data:  5
+==============================
+```
+
 </details>
 
 # Train
 
+> FlickrLogos_47
+
 ```shell
-Parent/YOLOv5$ python segment/train.py --data LogoRec.yaml --epochs 500 --batch-size ${batch-size} --weights yolov5${모델 버전}-seg.pt #--resume
+Parent/YOLOv5$ python segment/train.py --data LogoRec.yaml --epochs ${epoch} --batch-size ${batch-size} --weights yolov5${모델 버전}-seg.pt #--resume
+```
+
+> labelme
+
+```shell
+Parent/YOLOv5$ python segment/train.py --data labelme.yaml --epochs ${epoch} --batch-size ${batch-size} --weights ${weights}.pt
 ```
 
 + `--data`: 데이터의 정보가 저장된 `.yaml` 파일 지정
