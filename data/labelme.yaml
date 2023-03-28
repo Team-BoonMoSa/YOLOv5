@@ -1,0 +1,11 @@
+path: ../datasets/test
+train: # train images
+  - images/train
+val: # val images
+  - images/val
+# test: # test images
+#   - images/test
+
+# Classes
+names:
+  0: Logo
