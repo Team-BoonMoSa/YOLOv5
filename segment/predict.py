@@ -314,7 +314,7 @@ def parse_opt():
     parser.add_argument('--dnn', action='store_true', help='use OpenCV DNN for ONNX inference')
     parser.add_argument('--vid-stride', type=int, default=1, help='video frame-rate stride')
     parser.add_argument('--retina-masks', action='store_true', help='whether to plot masks in native resolution')
-    parser.add_argument('--bms', type=int, default=0, help='0: Detection & Segmentation Results / 1: BoonMoSa Results / 2: Demo')
+    parser.add_argument('--bms', type=int, default=0, help='0: Detection / 1: Segmentation / 2: BoonMoSa / 3: Demo')
     opt = parser.parse_args()
     opt.imgsz *= 2 if len(opt.imgsz) == 1 else 1  # expand
     print_args(vars(opt))
