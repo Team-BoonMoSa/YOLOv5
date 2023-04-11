@@ -73,28 +73,35 @@ Parent/YOLOv5$ python segment/val.py --data LogoRec.yaml --batch-size ${batch-si
 
 # Test
 
-> 모자이크 없는 결과 출력
+> Detection
 
 ```shell
 Parent/YOLOv5$ python segment/predict.py --weights runs/train-seg/${훈련된 가중치}/weights/best.pt --source ../datasets/LogoRec/images/test --conf-thres ${threshold} --bms 0
 ```
 
-> 모자이크 있는 결과 출력
+> Segmentation
 
 ```shell
 Parent/YOLOv5$ python segment/predict.py --weights runs/train-seg/${훈련된 가중치}/weights/best.pt --source ../datasets/LogoRec/images/test --conf-thres ${threshold} --bms 1
 ```
 
+> Mosaic
+
+```shell
+Parent/YOLOv5$ python segment/predict.py --weights runs/train-seg/${훈련된 가중치}/weights/best.pt --source ../datasets/LogoRec/images/test --conf-thres ${threshold} --bms 2
+```
+
 > :tada: [Demo!](https://github.com/Team-BoonMoSa/YOLOv5/pull/5) :tada:
 
 ```shell
-Parent/YOLOv5$ python segment/predict.py --weights runs/train-seg/${훈련된 가중치}/weights/best.pt --source 0 --conf-thres ${threshold} --bms 2
+Parent/YOLOv5$ python segment/predict.py --weights runs/train-seg/${훈련된 가중치}/weights/best.pt --source 0 --conf-thres ${threshold} --bms 3
 ```
 
 + `--weights`: Test를 위해 사용할 가중치
 + `--source`: Test를 위해 사용할 데이터 (`0`으로 지정 시 캠 사용)
 + `--conf-thres`: Confidence threshold
 + `--bms`: BoonMoSa! (For Real-Time Operation)
-  + `0`: Detection & Segmentation
-  + `1`: Only Mosaic
-  + `2`: Demo (Raw Image -> Detection -> Segmentation -> Mosaic)
+  + `0`: Detection
+  + `1`: Segmentation
+  + `2`: Only Mosaic
+  + `3`: Demo (Raw Image -> Detection -> Segmentation -> Mosaic)
