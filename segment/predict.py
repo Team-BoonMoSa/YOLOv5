@@ -181,7 +181,7 @@ def run(
                     s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
 
                 # Mask plotting
-                if bms == 0:
+                if bms == 1:
                     annotator.masks(
                         masks,
                         colors=[colors(x, True) for x in det[:, 5]],
