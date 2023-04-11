@@ -103,5 +103,5 @@ Parent/YOLOv5$ python segment/predict.py --weights runs/train-seg/${훈련된 �
 + `--bms`: BoonMoSa! (For Real-Time Operation)
   + `0`: Detection
   + `1`: Segmentation
-  + `2`: Only Mosaic
+  + `2`: Mosaic
   + `3`: Demo (Raw Image -> Detection -> Segmentation -> Mosaic)
