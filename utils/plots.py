@@ -84,7 +84,7 @@ class Annotator:
         else:  # use cv2
             self.im = im
         self.lw = line_width or max(round(sum(im.shape) / 2 * 0.003), 2)  # line width
-        self.gaussian_blur = transforms.GaussianBlur(kernel_size=(21, 21), sigma=(5, 5))
+        self.gaussian_blur = transforms.GaussianBlur(kernel_size=(21, 21), sigma=(25, 25))
 
     def box_label(self, box, label='', color=(128, 128, 128), txt_color=(255, 255, 255)):
         # Add one xyxy box to image with label
