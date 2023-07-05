@@ -60,6 +60,9 @@ import pandas as pd
 import torch
 from torch.utils.mobile_optimizer import optimize_for_mobile
 
+import torch.neuron
+
+
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
 if str(ROOT) not in sys.path:
@@ -610,6 +613,14 @@ def run(
             f[9], _ = export_tfjs(file, int8)
     if paddle:  # PaddlePaddle
         f[10], _ = export_paddle(model, im, file, metadata)
+    '''
+    NOTE:
+    PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python python export.py --weights best.pt
+    '''
+    input_tensor = torch.randn(1, 3, 640, 640, dtype=torch.float32)
+    model_neuron = torch.neuron.trace(model, [input_tensor])
+    filename = 'model_neuron.pt'
+    model_neuron.save(filename)
 
     # Finish
     f = [str(x) for x in f if x]  # filter out '' and None
