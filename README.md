@@ -46,13 +46,13 @@ No. Total GT Data:  5
 > FlickrLogos_47
 
 ```shell
-Parent/YOLOv5$ python segment/train.py --data LogoRec.yaml --epochs ${epoch} --batch-size ${batch-size} --weights yolov5${모델 버전}-seg.pt #--resume
+Parent/YOLOv5$ python segment/train.py --data LogoRec.yaml --epochs ${epoch} --batch-size ${batch_size} --weights yolov5${모델 버전}-seg.pt #--resume
 ```
 
 > labelme
 
 ```shell
-Parent/YOLOv5$ python segment/train.py --data labelme.yaml --epochs ${epoch} --batch-size ${batch-size} --weights ${weights}.pt
+Parent/YOLOv5$ python segment/train.py --data labelme.yaml --epochs ${epoch} --batch-size ${batch_size} --weights ${weights}.pt
 ```
 
 + `--data`: 데이터의 정보가 저장된 `.yaml` 파일 지정
@@ -64,7 +64,7 @@ Parent/YOLOv5$ python segment/train.py --data labelme.yaml --epochs ${epoch} --b
 # Validation
 
 ```shell
-Parent/YOLOv5$ python segment/val.py --data LogoRec.yaml --batch-size ${batch-size} --weights ${weights}
+Parent/YOLOv5$ python segment/val.py --data LogoRec.yaml --batch-size ${batch_size} --weights ${weights}
 ```
 
 + `--data`: 데이터의 정보가 저장된 `.yaml` 파일 지정
